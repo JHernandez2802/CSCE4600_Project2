@@ -1,0 +1,5 @@
+Program tested on Ubuntu 12.04.5 LTS
+gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5)
+
+To compile program: "$make"
+To run program:"$./scheduler"
