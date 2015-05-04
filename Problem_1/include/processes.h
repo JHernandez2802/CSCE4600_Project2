@@ -3,10 +3,10 @@
 /*****************************************************************
 	Programmer: Matthew Sherwood, Li Zhang, Juan Hernandez       *
 	Class: CSCE 4600                                             *
-	Date: 03/17/2015                                             *
-	Assignment: Homework 2 - Program 3                           *
-	Purpose: To simulate process generation                      *
-             Processors are all identical in this case           * 
+	Date: 04/27/2015                                             *
+	Assignment: Project 2                                        *
+	Purpose: To  simulate of different scheduling disciplines to *
+             allocate set of processes to available processors   *
 *****************************************************************/
 
 #ifndef PROCGEN
@@ -23,15 +23,15 @@ class c_Proc{
 		random_device rd;
 		signed long long int cpuCycles;
 		int pidNum;
-		int memSize;
+		int memSize; //in bytes
 		int jobTime;
 		bool run;
-		void cpuCreation();
+		void cyclesCreation();
 		void memCreation();
 	public: //Output file components and display
 		ofstream f;
 		void fileOutput();
-		void procOutput();
+		void jobOutput();
 	public: //Constructors and accessors
 		c_Proc(int x); //constructor
 		c_Proc();
@@ -39,7 +39,7 @@ class c_Proc{
 		int exponent;
 		int mem();
 		int cpu();
-		int showPid();
+		int pid();
 	public: //mutators and others
 		int timeCalc(int GHZ, int EXP);
 		bool hasRan();

@@ -1,12 +1,14 @@
 // File scheduler.cpp
 
 /*****************************************************************
-	Programmer: Matthew Sherwood                 				 *
+	Programmer: Matthew Sherwood, Li Zhang, Juan Hernandez       *
 	Class: CSCE 4600                                             *
-	Date: 03/17/2015                                             *
-	Assignment: Project 1                                        *
-	Purpose: To create and test a scheduler					 	 *
+	Date: 04/27/2015                                             *
+	Assignment: Project 2                                        *
+	Purpose: To  simulate of different scheduling disciplines to *
+             allocate set of processes to available processors   *
 *****************************************************************/
+
 #include "processes.h"
 #include "processor.h"
 

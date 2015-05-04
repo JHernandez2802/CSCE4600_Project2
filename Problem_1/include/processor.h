@@ -1,12 +1,14 @@
 // File processor.h
 
 /*****************************************************************
-	Programmer: Juan Hernandez, Matthew Sherwood                 *
+	Programmer: Matthew Sherwood, Li Zhang, Juan Hernandez       *
 	Class: CSCE 4600                                             *
-	Date: 03/17/2015                                             *
-	Assignment: Project 1                                        *
-	Purpose: To create and test a scheduler					 	 *
+	Date: 04/27/2015                                             *
+	Assignment: Project 2                                        *
+	Purpose: To  simulate of different scheduling disciplines to *
+             allocate set of processes to available processors   *
 *****************************************************************/
+
 #ifndef PROCESSOR
 #define PROCESSOR
 
@@ -16,11 +18,10 @@ using namespace std;
 #include <random>
 #include "processes.h"
 
-static const int SIZE = 99;
+static const int SIZE = 50;
 
 class processor{
 	private: //Private variables
-		c_Proc* jobArray[SIZE];
 		signed long long int speed;
 		bool finished;
 		int jobTime;
@@ -39,7 +40,7 @@ class processor{
 		void displayOutput();
 		void fileOutput();
 	public: //mutators
-		void calcCycles(int GHZ, int EXP);
+		void calcCycles(int GHZ, int EXP, c_Proc* job);
 		void getJob(c_Proc* job);
 		void raiseFlag();
 		void freeCPU();
