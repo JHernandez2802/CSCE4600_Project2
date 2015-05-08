@@ -23,7 +23,7 @@ void sortProcs(c_Proc**);
 void userPrompt(int*, int*);
 void welcomeMsg();
 void endMsg();
-extern void simulator(c_Proc**, int, int);
+extern bool simulator(c_Proc**, int, int,  float &memCount);
 extern void processorOutput();
 
 /** @brief           Writes process info to processes.txt
@@ -150,6 +150,7 @@ int main(){
 	int numJobs=50;
 	int numProcs=1;
 	float memTotal=0;
+	double time;
 	string prompt;
 	clock_t t;
 	
@@ -170,33 +171,33 @@ int main(){
 		process[i] = new c_Proc(i);
 	cout<<numJobs <<" new processes created."<<endl;
 	
-	//Calculates total memory consumption
-	for(int i=0;i<numJobs;i++)
-		memTotal+=process[i]->mem();
-	memTotal=memTotal/(1000000);
-	
-	//Checks to make sure total memory consumption is allowed
-/* 	if(memTotal>10){
-		cout<<"\nError! Memory total is greater than 10Mb"<<endl;
-		return 0;
-	} */
-	
 	//Runs scheduler and clocks
 	auto t1 = std::chrono::high_resolution_clock::now();
 	cout<<"Running processes...";
-	simulator(process, numJobs, numProcs);
-	cout<<"All processes successfully ran!\n"<<endl;
-	auto t2 = std::chrono::high_resolution_clock::now();
+	if(simulator(process, numJobs, numProcs, memTotal)){
+		cout<<"All processes successfully ran!\n"<<endl;
+		auto t2 = std::chrono::high_resolution_clock::now();
+		//Outputs time
+		time = std::chrono::duration_cast<std::chrono::microseconds>(t2-t1).count();
+		time = time/1000;
+		cout<<"\nIt took us "<<time;
+		cout<<"ms to run all processes\n"<<endl;
+	}
+	else{
+		cout<<"Error! We ran out of memory for the processes"<<endl;
+		auto t2 = std::chrono::high_resolution_clock::now();
+		//Outputs time
+		time = std::chrono::duration_cast<std::chrono::microseconds>(t2-t1).count();
+		time = time/1000;
+		cout<<"\nIt took us "<<time;
+		cout<<"ms to run the processes up to this point.\n"<<endl;
+	}
 	
-	//Outputs time
-	double time = std::chrono::duration_cast<std::chrono::microseconds>(t2-t1).count();
-	time = time/1000;
-	cout<<"It took us "<<time;
-	cout<<"ms to run all processes\n"<<endl;
+
 	
 	//Outputs total memory consumption
 	cout<<"Total memory of all processes is ";
-	cout<<memTotal<<"Mb\n"<<endl;
+	cout<<memTotal/1000000<<"Mb\n"<<endl;
 	
 	//Displays which processor has which job assigned to it
 	//processorOutput();

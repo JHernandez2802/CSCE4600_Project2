@@ -91,6 +91,18 @@ int c_Proc::pid(){
 	return pidNum;
 }
 
+void c_Proc::getMem(){
+	memory = (char*) malloc(memSize);
+}
+
+char* c_Proc::showMem(){
+	return memory;
+}
+
+void c_Proc::freeMem(){
+	free(memory);
+}
+
 /** @brief           Calculates how many cycles to complete this job
 *
 *   @details         Uses the processor speed in GHz in order to calculate

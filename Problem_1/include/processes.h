@@ -25,6 +25,7 @@ class c_Proc{
 		int pidNum;
 		int memSize; //in bytes
 		int jobTime;
+		char* memory;
 		bool run;
 		void cyclesCreation();
 		void memCreation();
@@ -40,6 +41,9 @@ class c_Proc{
 		int mem();
 		int cpu();
 		int pid();
+		void getMem();
+		char* showMem();
+		void freeMem();
 	public: //mutators and others
 		int timeCalc(int GHZ, int EXP);
 		bool hasRan();

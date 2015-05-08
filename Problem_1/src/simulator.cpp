@@ -48,76 +48,73 @@ void processorOutput(processor **procs, int procNum){
 
 /** @brief           Process Execution Simulator
  *
- *  @details         Calculates each how many cycles it takes for
- *                   for a job to complete and adds it to a 
- *                   cycle counter then allocates the job memory.
- *                   Then a whileloop is used as a processesor 
- *                   cycle simulator. After the job is complete, it
- *                   deallocates the memory and the cycle counter is
-*                    decremented by the job cycle number. 
+ *  @details         Runs through job array and adds processes 
+ *                   memory consumption to the memory array.
+ *                   A while loops are used to simulate processor
+ *                   cycles in order to get the next job and to run
+ *                   the processes.
  *
  *  @param jobs      Array of processes (jobs)
  *  @param totalJobs Total amount of processes (jobs)
+ *  @param numProc   How many processors to make
  */
-void simulator(c_Proc **jobs, int totalJobs, int numProc){
+bool simulator(c_Proc **jobs, int totalJobs, int numProc, float &memCount){
 	//Variables
 	int jobsIterator = 0;
 	int cycle=0;
-	int cycleCount[numProc];
-	int memArray[numProc];
+	int cycleCount;
 	
 	//Creates processors
  	processor *procs[numProc];
 	
-	//Initial malloc call
-	char* memory = (char*) malloc(sizeof(int));
+	//Create memory array - each bucket will contain a job
+	char* memArray = (char*) malloc(sizeof(char)*totalJobs);
 	
-	//Creates the array of processors and cycleCounts
+	//Creates the array of processors
 	for(int i=0;i<numProc;i++)
 		procs[i] = new processor(GHZ, MEM_AMOUNT,i+1);
 
-	//Runs until the last job has been ran
-	while(jobsIterator<totalJobs){
+	//Runs until the last job has been ran or we run out of memory
+ 	while(jobsIterator<totalJobs){
 		//Gives a job processors
 		for(int i = 0; i < numProc; i++){
 			//Calculates how long it will take processor to run job
-			cycleCount[i] = jobs[jobsIterator]->timeCalc(GHZ,EXP);
-			cycle+=cycleCount[i];
+			cycleCount = jobs[jobsIterator]->timeCalc(GHZ,EXP);
 			
-			//Memory array for later deallocation
-			memArray[i]=jobs[jobsIterator]->mem();
+			//Adds memory count to see if we're out of memory or not 
+			memCount+=jobs[jobsIterator]->mem();
+			if(memCount/(1000000) > 10)
+				return false;
 			
-			//Whileloop simulates processor cycle
-			//If if hasn't been 50 cycles yet, wait
-			while(cycle<50)
-				cycle++;
-				
+			//Job gets memory
+			jobs[jobsIterator]->getMem();
+			
+			//Adds job to the memory array
+			memArray[jobsIterator]=*jobs[jobsIterator]->showMem();
+
+			//Simulates process running
+			while(cycleCount!=0)
+				cycleCount--;
+			
+			//Frees the job memory
+			jobs[jobsIterator]->freeMem();
+			
 			//Increases jobsIterator
 			jobsIterator++;
 			
 			//Error checker
 			if(jobsIterator >= totalJobs)
 				break;
-			
+						//Waits for 50 cycles to get next job
+			while(cycle<50)
+				cycle++;
+			//Resets cycle
+				cycle=0;
 		}//end for
-
-		//Goes through the cycleCount array
-		for(int i=0; i<numProc; i++){
-			//Allocates memory using realloc
-			memory = (char*) realloc(memory, memArray[i]);
-			
-			//Each turn in the while loop 
-			//simulates a processor cycle
-			while(cycleCount[i]!=0){
-				cycleCount[i]--;
-				cycle--;
-			}
-
-		}//end for
-
 	}//end while
+	
 	//Frees memory
-	free(memory);
-	return;
+	free(memArray);
+	return true;
 }
 
