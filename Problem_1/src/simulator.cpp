@@ -66,7 +66,12 @@ void simulator(c_Proc **jobs, int totalJobs, int numProc){
 	int cycleCount[numProc];
 	int memArray[numProc];
 	
+	//Creates processors
  	processor *procs[numProc];
+	
+	//Initial malloc call
+	char* memory = (char*) malloc(sizeof(int));
+	
 	//Creates the array of processors and cycleCounts
 	for(int i=0;i<numProc;i++)
 		procs[i] = new processor(GHZ, MEM_AMOUNT,i+1);
@@ -98,8 +103,8 @@ void simulator(c_Proc **jobs, int totalJobs, int numProc){
 
 		//Goes through the cycleCount array
 		for(int i=0; i<numProc; i++){
-			//Allocates memory
-			int* memory = (int*) malloc(memArray[i]);
+			//Allocates memory using realloc
+			memory = (char*) realloc(memory, memArray[i]);
 			
 			//Each turn in the while loop 
 			//simulates a processor cycle
@@ -108,13 +113,11 @@ void simulator(c_Proc **jobs, int totalJobs, int numProc){
 				cycle--;
 			}
 
-			//deallocates the memory
-			free(memory);
-		
 		}//end for
 
 	}//end while
-
+	//Frees memory
+	free(memory);
 	return;
 }
 
