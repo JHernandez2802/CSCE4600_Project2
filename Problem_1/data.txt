@@ -1,0 +1,162 @@
+Total amount of jobs:50
+Total amount of processors1
+Total run time:0.813
+Total memory consumption:6.32863
+
+
+Total amount of jobs:50
+Total amount of processors1
+Total run time:0.79
+Total memory consumption:5.37402
+
+
+Total amount of jobs:50
+Total amount of processors1
+Total run time:0.77
+Total memory consumption:5.83939
+
+
+Total amount of jobs:50
+Total amount of processors1
+Total run time:0.764
+Total memory consumption:5.92813
+
+
+Total amount of jobs:50
+Total amount of processors1
+Total run time:0.761
+Total memory consumption:6.76252
+
+
+Total amount of jobs:50
+Total amount of processors2
+Total run time:1.496
+Total memory consumption:6.22906
+
+
+Total amount of jobs:50
+Total amount of processors2
+Total run time:1.486
+Total memory consumption:5.36308
+
+
+Total amount of jobs:50
+Total amount of processors2
+Total run time:1.424
+Total memory consumption:6.35782
+
+
+Total amount of jobs:50
+Total amount of processors2
+Total run time:1.453
+Total memory consumption:5.55441
+
+
+Total amount of jobs:50
+Total amount of processors2
+Total run time:1.484
+Total memory consumption:6.2416
+
+
+Total amount of jobs:50
+Total amount of processors3
+Total run time:2.176
+Total memory consumption:5.67285
+
+
+Total amount of jobs:50
+Total amount of processors3
+Total run time:2.13
+Total memory consumption:5.94153
+
+
+Total amount of jobs:50
+Total amount of processors3
+Total run time:2.231
+Total memory consumption:5.85515
+
+
+Total amount of jobs:50
+Total amount of processors3
+Total run time:2.174
+Total memory consumption:5.76219
+
+
+Total amount of jobs:50
+Total amount of processors3
+Total run time:2.264
+Total memory consumption:5.58233
+
+
+Total amount of jobs:50
+Total amount of processors3
+Total run time:2.958
+Total memory consumption:5.68374
+
+
+Total amount of jobs:50
+Total amount of processors4
+Total run time:3.037
+Total memory consumption:5.58465
+
+
+Total amount of jobs:50
+Total amount of processors4
+Total run time:2.82
+Total memory consumption:6.02113
+
+
+Total amount of jobs:50
+Total amount of processors4
+Total run time:2.76
+Total memory consumption:5.85841
+
+
+Total amount of jobs:50
+Total amount of processors4
+Total run time:2.772
+Total memory consumption:5.84342
+
+
+Total amount of jobs:50
+Total amount of processors4
+Total run time:3.032
+Total memory consumption:6.22306
+
+
+Total amount of jobs:50
+Total amount of processors4
+Total run time:2.955
+Total memory consumption:6.00384
+
+
+Total amount of jobs:50
+Total amount of processors5
+Total run time:3.62
+Total memory consumption:5.39164
+
+
+Total amount of jobs:50
+Total amount of processors5
+Total run time:3.738
+Total memory consumption:5.46432
+
+
+Total amount of jobs:50
+Total amount of processors5
+Total run time:3.58
+Total memory consumption:5.76972
+
+
+Total amount of jobs:50
+Total amount of processors5
+Total run time:4.106
+Total memory consumption:6.06964
+
+
+Total amount of jobs:50
+Total amount of processors5
+Total run time:3.643
+Total memory consumption:5.86155
+
+

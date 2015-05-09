@@ -77,6 +77,7 @@ bool simulator(c_Proc **jobs, int totalJobs, int numProc, float &memCount){
 	for(int i=0;i<numProc;i++)
 		procs[i] = new processor(GHZ, MEM_AMOUNT,i+1);
 
+
 	//Runs until the last job has been ran or we run out of memory
  	while(jobsIterator<totalJobs){
 		//Gives a job processors
@@ -90,7 +91,7 @@ bool simulator(c_Proc **jobs, int totalJobs, int numProc, float &memCount){
 				if(memCount/(1000000) > 10)
 					return false;
 				
-				jobs[jobsIterator]->getMem();
+				//jobs[jobsIterator]->getMem();
 				
 				//Adds job to the memory array
 				memArray[i]=jobs[jobsIterator]->mem();
@@ -110,11 +111,11 @@ bool simulator(c_Proc **jobs, int totalJobs, int numProc, float &memCount){
 		
 		//Simulates 50 cycles of running
 		//jobProgress removes 50 cycles of work from the job time
-		//Frees up the job mem
+		//freeCPU also frees up the memory that that process is using
 		for(int i = 0; i < numProc; i++){
 			if(procs[i]->jobProgress()){
 				procs[i]->freeCPU();
-				jobs[procJobArray[i][0]]->freeMem();
+				//jobs[procJobArray[i][0]]->freeMem();
 			}
 		}
 		
