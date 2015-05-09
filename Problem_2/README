@@ -1,6 +1,21 @@
 Program tested on Ubuntu 12.04.5 LTS
 gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5)
 
-To compile program: "make"
-To run program:"./MemoryTest"
-To clean up: "make clean"
+"ExecutionLoop.cpp" has a variable named PROCESSORS that can be
+changed if you would like to test with more or less processors.
+
+
+Compiling
+---------
+Simply use "make" for the base program. If you would like to
+run the version that uses malloc, type "make malloc"
+
+Running
+-------
+"./MemoryTest" is all that's needed.
+
+Clean Up
+--------
+We made it easy with "make clean"
+
+

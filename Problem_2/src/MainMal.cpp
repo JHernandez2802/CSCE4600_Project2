@@ -9,7 +9,6 @@
 #include <string>
 #include <chrono>
 #include "Processor.h"
-#include "Memory.h"
 //----
 using namespace std;
 //----
@@ -21,9 +20,6 @@ void WelcomeMsg();
 void EndMsg();
 extern void ExecutionLoop(fakeJobs**, int);
 extern void ProcessorOutput();
-extern void InitMemory();
-//----
-extern unsigned char *MEMORY_POOL;
 
 
 int
@@ -34,10 +30,6 @@ main(void) {
 
     ClearScreen();
 	WelcomeMsg();
-
-    cout << "Allocating initial memory through malloc...";
-    InitMemory();
-    cout << "Success!" << endl;
 
 	cout << "Creating " << PROC_NUM << " processes...";                         //----Creation of processes
     for(; i < PROC_NUM; i += 1) {
@@ -52,14 +44,13 @@ main(void) {
     chrono::duration<double> difference = end - start;
 	cout << "Success!\n" << endl;
 
-    cout << "According to C++'s built-in high resolution clock" << endl;
+	cout << "According to C++'s built-in high resolution clock" << endl;
     cout << "this program took " << difference.count() << " seconds\n" << endl;
 
     ProcessorOutput();                                                          //----Displays which processor has which job
                                                                                 //    assigned to it
     FileOutput(process, PROC_NUM);                                              //----Sends processes info to processes.txt
 
-    free(MEMORY_POOL);
     EndMsg();                                                                   //----Program termination
 	
 	return 0;
@@ -89,7 +80,8 @@ WelcomeMsg() {
 
 	cout << "Welcome to Group 14's Memory simulator!" << endl;
 	cout << "For this simulation, all processors have" << endl;
-	cout << "equal speed at 2GHz\n" << endl;
+	cout << "equal speed at 2GHz. This version uses" << endl;
+    cout << "malloc to give a time comparison.\n" << endl;
 	cout << "Let's get started!\n" << endl;
 
     return;

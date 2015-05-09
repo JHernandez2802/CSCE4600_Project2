@@ -40,7 +40,7 @@ ExecutionLoop(fakeJobs **jobs, int total_jobs) {
         for(proc_i = 0; proc_i < PROCESSORS; proc_i += 1) {                     //----Gives a job to free processor
 
             if(procs[proc_i]->CPUBusy() == false) {
-                procs[proc_i]->GetMem(MyMalloc(jobs[jobs_i]->Mem()));           //----Checks for enough memory
+                procs[proc_i]->GetMem(malloc(jobs[jobs_i]->Mem()));             //----Checks for enough memory
                 if(procs[proc_i]->CheckMem()) {
                     procs[proc_i]->GetJob(jobs[jobs_i]);                        //----If enough memory, take job
                     procs[proc_i]->ClaimCPU();
