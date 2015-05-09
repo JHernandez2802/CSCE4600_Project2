@@ -10,7 +10,7 @@
 //----
 #include "Processes.h"
 //----
-static const int SIZE = 99;
+static const int SIZE = 101;
 
 
 class
