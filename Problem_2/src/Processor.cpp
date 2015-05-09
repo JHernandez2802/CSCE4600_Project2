@@ -5,8 +5,8 @@
 	Assignment: Project 2                                        *
 	Purpose: Implement in-house version of malloc and free       *
 *****************************************************************/
-#include "processor.h"
 #include <iostream>
+#include "Processor.h"
 //----
 using namespace std;
 //----
@@ -68,8 +68,8 @@ processor::ClaimCPU() {
 
 void
 processor::FreeCPU() {
-	finished = false;
-    MyFree(mem_pointer);
+    finished = false;
+    MyFree((void *)mem_pointer);
     return;
 }
 

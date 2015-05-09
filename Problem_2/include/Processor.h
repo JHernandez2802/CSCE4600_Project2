@@ -8,7 +8,7 @@
 #ifndef PROCESSOR_H
 #define PROCESSOR_H
 //----
-#include "processes.h"
+#include "Processes.h"
 //----
 static const int SIZE = 99;
 

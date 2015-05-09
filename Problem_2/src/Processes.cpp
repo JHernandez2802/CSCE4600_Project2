@@ -5,8 +5,8 @@
 	Assignment: Project 2                                        *
 	Purpose: Implement in-house version of malloc and free       *
 *****************************************************************/
-#include "processes.h"
 #include <iostream>
+#include "Processes.h"
 //----
 using namespace std;
 

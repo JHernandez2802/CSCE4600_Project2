@@ -7,8 +7,8 @@
 *****************************************************************/
 #include <iostream>
 #include <string>
-#include "processor.h"
-#include "memory.h"
+#include "Processor.h"
+#include "Memory.h"
 //----
 using namespace std;
 //----
@@ -20,14 +20,14 @@ void WelcomeMsg();
 void EndMsg();
 extern void ExecutionLoop(fakeJobs**, int);
 extern void ProcessorOutput();
+extern void InitMemory();
 //----
 extern unsigned char *MEMORY_POOL;
 
 
 int
 main(void) {
-    int i = 0;
-    string prompt{""};
+    auto i = 0;
 	fakeJobs* process[PROC_NUM];
 
 
@@ -35,10 +35,11 @@ main(void) {
 	WelcomeMsg();
 
     cout << "Allocating initial memory through malloc...";
+    InitMemory();
     cout << "Success!" << endl;
 
 	cout << "Creating " << PROC_NUM << " processes...";                         //----Creation of processes
-    for(; i < PROC_NUM; i++) {
+    for(; i < PROC_NUM; i += 1) {
 		process[i] = new fakeJobs(i);
     }
 	cout << PROC_NUM << " new processes created." << endl;

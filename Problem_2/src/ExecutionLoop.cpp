@@ -6,7 +6,7 @@
 	Purpose: Implement in-house version of malloc and free       *
 *****************************************************************/
 #include <queue>
-#include "processor.h"
+#include "Processor.h"
 //----
 using namespace std;
 //----
@@ -19,15 +19,11 @@ processor *procs[PROCESSORS];
 queue<fakeJobs> job_queue;
 
 
-//----NOTE: Because the while loop condition is now based on a 50 cycle interval
-//          instead of a one second interval the processors have been
-//          dramatically simplified. All processors are assumed to be the same
-//          speed and all use the same pool of shared memory.
 void
-ExecutionLoop(fakeJobs **jobs, int total_jobs) {                                //----SJF Scheduler Implementation
-	int jobs_i = 0;
-	int proc_i = 0;
-    int file_i = 0;
+ExecutionLoop(fakeJobs **jobs, int total_jobs) {
+	auto jobs_i = 0;
+	auto proc_i = 0;
+    auto file_i = 0;
 	ofstream schedule_file;
 
 
