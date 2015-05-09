@@ -52,6 +52,8 @@ void c_Proc::memCreation(){
 	//within the pre-determined range
 	while(memSize<=1 || memSize >200000)
 		memSize=distribution(rd);
+	
+	memory = (char*) malloc(memSize);
 }
 
 void c_Proc::cyclesCreation(){

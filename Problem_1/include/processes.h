@@ -23,7 +23,7 @@ class c_Proc{
 		random_device rd;
 		signed long long int cpuCycles;
 		int pidNum;
-		int memSize; //in bytes
+		int memSize;
 		int jobTime;
 		char* memory;
 		bool run;

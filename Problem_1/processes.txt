@@ -1,0 +1,250 @@
+
+PID number:1
+CPU cycles:34000000000
+Scientific notation:34x10^9
+Memory size:123520Bytes
+
+PID number:2
+CPU cycles:1300000000000
+Scientific notation:13x10^11
+Memory size:145349Bytes
+
+PID number:3
+CPU cycles:35000000000
+Scientific notation:35x10^9
+Memory size:96978Bytes
+
+PID number:4
+CPU cycles:45000000000000
+Scientific notation:45x10^12
+Memory size:121004Bytes
+
+PID number:5
+CPU cycles:3900000000000
+Scientific notation:39x10^11
+Memory size:118884Bytes
+
+PID number:6
+CPU cycles:160000000
+Scientific notation:16x10^7
+Memory size:88158Bytes
+
+PID number:7
+CPU cycles:1700000000000
+Scientific notation:17x10^11
+Memory size:142721Bytes
+
+PID number:8
+CPU cycles:480000000
+Scientific notation:48x10^7
+Memory size:140665Bytes
+
+PID number:9
+CPU cycles:38000000000
+Scientific notation:38x10^9
+Memory size:147755Bytes
+
+PID number:10
+CPU cycles:1900000000
+Scientific notation:19x10^8
+Memory size:102765Bytes
+
+PID number:11
+CPU cycles:1700000000000
+Scientific notation:17x10^11
+Memory size:196624Bytes
+
+PID number:12
+CPU cycles:30000000000
+Scientific notation:30x10^9
+Memory size:131251Bytes
+
+PID number:13
+CPU cycles:190000000000
+Scientific notation:19x10^10
+Memory size:107265Bytes
+
+PID number:14
+CPU cycles:4100000000
+Scientific notation:41x10^8
+Memory size:134489Bytes
+
+PID number:15
+CPU cycles:47000000
+Scientific notation:47x10^6
+Memory size:92863Bytes
+
+PID number:16
+CPU cycles:1200000000
+Scientific notation:12x10^8
+Memory size:81717Bytes
+
+PID number:17
+CPU cycles:220000000000
+Scientific notation:22x10^10
+Memory size:117564Bytes
+
+PID number:18
+CPU cycles:2300000000
+Scientific notation:23x10^8
+Memory size:109731Bytes
+
+PID number:19
+CPU cycles:10000000
+Scientific notation:10x10^6
+Memory size:134115Bytes
+
+PID number:20
+CPU cycles:170000000
+Scientific notation:17x10^7
+Memory size:141530Bytes
+
+PID number:21
+CPU cycles:3900000000
+Scientific notation:39x10^8
+Memory size:98397Bytes
+
+PID number:22
+CPU cycles:4900000000
+Scientific notation:49x10^8
+Memory size:180766Bytes
+
+PID number:23
+CPU cycles:500000000000
+Scientific notation:50x10^10
+Memory size:120212Bytes
+
+PID number:24
+CPU cycles:17000000000
+Scientific notation:17x10^9
+Memory size:132830Bytes
+
+PID number:25
+CPU cycles:10000000000000
+Scientific notation:10x10^12
+Memory size:143504Bytes
+
+PID number:26
+CPU cycles:32000000
+Scientific notation:32x10^6
+Memory size:112151Bytes
+
+PID number:27
+CPU cycles:350000000
+Scientific notation:35x10^7
+Memory size:93343Bytes
+
+PID number:28
+CPU cycles:43000000
+Scientific notation:43x10^6
+Memory size:114473Bytes
+
+PID number:29
+CPU cycles:1400000000000
+Scientific notation:14x10^11
+Memory size:30061Bytes
+
+PID number:30
+CPU cycles:21000000000000
+Scientific notation:21x10^12
+Memory size:189495Bytes
+
+PID number:31
+CPU cycles:160000000000
+Scientific notation:16x10^10
+Memory size:110235Bytes
+
+PID number:32
+CPU cycles:35000000000000
+Scientific notation:35x10^12
+Memory size:143394Bytes
+
+PID number:33
+CPU cycles:10000000000000
+Scientific notation:10x10^12
+Memory size:59619Bytes
+
+PID number:34
+CPU cycles:28000000000000
+Scientific notation:28x10^12
+Memory size:100768Bytes
+
+PID number:35
+CPU cycles:34000000
+Scientific notation:34x10^6
+Memory size:130663Bytes
+
+PID number:36
+CPU cycles:440000000000
+Scientific notation:44x10^10
+Memory size:196007Bytes
+
+PID number:37
+CPU cycles:1100000000000
+Scientific notation:11x10^11
+Memory size:60905Bytes
+
+PID number:38
+CPU cycles:1400000000
+Scientific notation:14x10^8
+Memory size:70850Bytes
+
+PID number:39
+CPU cycles:1200000000000
+Scientific notation:12x10^11
+Memory size:139083Bytes
+
+PID number:40
+CPU cycles:1400000000
+Scientific notation:14x10^8
+Memory size:100140Bytes
+
+PID number:41
+CPU cycles:44000000000000
+Scientific notation:44x10^12
+Memory size:80514Bytes
+
+PID number:42
+CPU cycles:1100000000000
+Scientific notation:11x10^11
+Memory size:188887Bytes
+
+PID number:43
+CPU cycles:2200000000
+Scientific notation:22x10^8
+Memory size:185629Bytes
+
+PID number:44
+CPU cycles:12000000
+Scientific notation:12x10^6
+Memory size:198043Bytes
+
+PID number:45
+CPU cycles:18000000000000
+Scientific notation:18x10^12
+Memory size:139711Bytes
+
+PID number:46
+CPU cycles:310000000
+Scientific notation:31x10^7
+Memory size:168456Bytes
+
+PID number:47
+CPU cycles:500000000000
+Scientific notation:50x10^10
+Memory size:113565Bytes
+
+PID number:48
+CPU cycles:490000000000
+Scientific notation:49x10^10
+Memory size:129485Bytes
+
+PID number:49
+CPU cycles:28000000
+Scientific notation:28x10^6
+Memory size:139481Bytes
+
+PID number:50
+CPU cycles:35000000
+Scientific notation:35x10^6
+Memory size:95990Bytes

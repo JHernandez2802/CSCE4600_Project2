@@ -66,7 +66,7 @@ void simulationOutput(float memory, double time, int numJobs, int numProcs){
 	s<<"Total amount of jobs:"<<numJobs<<endl;
 	s<<"Total amount of processors"<<numProcs<<endl;
 	s<<"Total run time:"<<time<<endl;
-	s<<"Total memory consumption:"<<memory<<endl;
+	s<<"Total memory consumption:"<<memory/1000000<<endl;
 	s<<"\n"<<endl;
 	s.close();
 }
