@@ -124,7 +124,7 @@ void endMsg(){
 	cout<<"Goodbye!"<<endl;
 }
 
-void userPrompt(int &numProcs, int &numJobs){
+void userPrompt(int &numProcs){
 	cout<<"How many processors would you like to create?"<<endl;
 	cout<<"Enter a value [1-5]:";
 	cin>>numProcs;
@@ -136,14 +136,6 @@ void userPrompt(int &numProcs, int &numJobs){
 		cin>>numProcs;
 	}
 	
-	cout<<"How many processes would you like to create?"<<endl;
-	cout<<"Enter a value [50-500]:";
-	cin>>numJobs;
-	while(numJobs<50 || numJobs>500){
-		cout<<"\nError! Invalid value detected!"<<endl;
-		cout<<"Enter a value [50-200]:";
-		cin>>numJobs;
-	}
 }
 
 int main(){
@@ -162,7 +154,7 @@ int main(){
 	welcomeMsg();
 
 	//Prompts user for input
-	userPrompt(numProcs,numJobs);
+	userPrompt(numProcs);
 	
 	//Creation of processes
 	cout<<"\nCreating "<<numJobs <<" processes...";

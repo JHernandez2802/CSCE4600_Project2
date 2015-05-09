@@ -61,8 +61,11 @@ void processorOutput(processor **procs, int procNum){
 bool simulator(c_Proc **jobs, int totalJobs, int numProc, float &memCount){
 	//Variables
 	int jobsIterator = 0;
+	int memIterator = 0;
 	int cycle=0;
-	int cycleCount;
+	int minCycle;
+	int procJobArray[numProc][0];
+	int minProcessor;
 	
 	//Creates processors
  	processor *procs[numProc];
@@ -78,39 +81,43 @@ bool simulator(c_Proc **jobs, int totalJobs, int numProc, float &memCount){
  	while(jobsIterator<totalJobs){
 		//Gives a job processors
 		for(int i = 0; i < numProc; i++){
-			//Calculates how long it will take processor to run job
-			cycleCount = jobs[jobsIterator]->timeCalc(GHZ,EXP);
-			
-			//Adds memory count to see if we're out of memory or not 
-			memCount+=jobs[jobsIterator]->mem();
-			if(memCount/(1000000) > 10)
-				return false;
-			
-			//Job gets memory
-			jobs[jobsIterator]->getMem();
-			
-			//Adds job to the memory array
-			memArray[jobsIterator]=*jobs[jobsIterator]->showMem();
+			if( (procs[i]->flagCheck() ) == false ){
+				//Sets processor to busy
+				procs[i]->raiseFlag();
+				
+				//Adds memory count to see if we're out of memory or not 
+				memCount+=jobs[jobsIterator]->mem();
+				if(memCount/(1000000) > 10)
+					return false;
+				
+				jobs[jobsIterator]->getMem();
+				
+				//Adds job to the memory array
+				memArray[i]=jobs[jobsIterator]->mem();
+				
+				//Figures out which processor has which job
+				procJobArray[i][0]=jobsIterator;
+				
+				//Increases jobsIterator
+				jobsIterator++;
 
-			//Simulates process running
-			while(cycleCount!=0)
-				cycleCount--;
-			
-			//Frees the job memory
-			jobs[jobsIterator]->freeMem();
-			
-			//Increases jobsIterator
-			jobsIterator++;
-			
-			//Error checker
-			if(jobsIterator >= totalJobs)
-				break;
-						//Waits for 50 cycles to get next job
-			while(cycle<50)
-				cycle++;
-			//Resets cycle
-				cycle=0;
+				//Error checker
+				if(jobsIterator >= totalJobs)
+					break;
+			}//end if
+
 		}//end for
+		
+		//Simulates 50 cycles of running
+		//jobProgress removes 50 cycles of work from the job time
+		//Frees up the job mem
+		for(int i = 0; i < numProc; i++){
+			if(procs[i]->jobProgress()){
+				procs[i]->freeCPU();
+				jobs[procJobArray[i][0]]->freeMem();
+			}
+		}
+		
 	}//end while
 	
 	//Frees memory

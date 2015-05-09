@@ -18,11 +18,12 @@ using namespace std;
 #include <random>
 #include "processes.h"
 
-static const int SIZE = 50;
+static const int SIZE = 99;
 
 class processor{
 	private: //Private variables
 		signed long long int speed;
+		c_Proc* jobArray[SIZE];
 		bool finished;
 		int jobTime;
 		int procNum;
@@ -40,9 +41,10 @@ class processor{
 		void displayOutput();
 		void fileOutput();
 	public: //mutators
-		void calcCycles(int GHZ, int EXP, c_Proc* job);
+		void calcCycles(int GHZ, int EXP);
 		void getJob(c_Proc* job);
 		void raiseFlag();
 		void freeCPU();
+		bool jobProgress();
 }; //end class declaration
 #endif

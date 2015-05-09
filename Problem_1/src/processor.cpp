@@ -12,6 +12,8 @@
 #include "processor.h"
 
 processor::processor(int x, int y, int z){
+	for(int i=0;i<SIZE;i++)
+		jobArray[i] = new c_Proc();
 	speed   = x*pow(10,9);
 	mem     = y;
 	procNum = z;
@@ -42,10 +44,18 @@ bool processor::flagCheck(){
 
 void processor::raiseFlag(){
 	finished = true;
+	jobArray[jobNum]->freeMem();
 }
 
 void processor::freeCPU(){
 	finished = false;
+}
+
+bool processor::jobProgress(){
+	jobTime=jobTime-50;
+	if(jobTime<=0)
+		return true;
+	return false;
 }
 
 /** @brief           Figures out how many cycles to complete job 
@@ -55,8 +65,8 @@ void processor::freeCPU(){
 *   @param GHZ       Processor speed in GHz 
 *   @param EXP       Exponent for cycle time (2GHz = 2*10^9 cycles/second)
 */
-void processor::calcCycles(int GHZ, int EXP, c_Proc* job){
-	jobTime += ( job->timeCalc(GHZ,EXP) );
+void processor::calcCycles(int GHZ, int EXP){
+	jobTime = ( jobArray[jobNum-1]->timeCalc(GHZ,EXP) );
 }
 
 /** @brief           Displays processor job info
@@ -112,5 +122,6 @@ void processor::fileOutput(){
 *                    assigned to the processor
 */
 void processor::getJob(c_Proc* job){
-
+jobArray[jobNum]=job;
+	jobNum++;
 }
