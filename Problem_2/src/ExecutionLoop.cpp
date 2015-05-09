@@ -11,7 +11,7 @@
 using namespace std;
 //----
 static const int TIME_INTERVAL = 50;
-static const int PROCESSORS = 3;
+static const int PROCESSORS = 1;
 //----
 extern void* MyMalloc(int);
 //----

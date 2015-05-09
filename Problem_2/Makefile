@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-std=c++0x -g -Iinclude -Wall
+CFLAGS=-std=c++0x -Iinclude -Wall
 BIN=bin
 INC=include
 SRC=src
